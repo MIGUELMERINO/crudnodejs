@@ -14,7 +14,7 @@ const findAll = async () => {
 
 /**
  * Metodo que obtiene un elemento de la collection por su identificador.
- * @param id Indentificador de elemento almacenado. 
+ * @param id Indentificador de elemento almacenado.
  * @return un elemento encontrado dentro de la collection.
  * **/
 const findById = async (id) => {
@@ -22,14 +22,21 @@ const findById = async (id) => {
 };
 
 /**
- * 
- *
+ * Metodo o funcion que guarda en el documento.
+ * @param data datos para crear los valores.
+ * @return retorna una collection registrada.
  * **/
 const save = async (data) => {
   let cliente = new Cliente(jsonData(data));
   return await Crud.save(TABLE, cliente);
 };
 
+/**
+ * Metodo o funcion que actualiza los datos de la colleccion registrada.
+ * @param id identificador del documento.
+ * @param data datos que de debe actualizar.
+ * @return retorna un valor actualizado.
+ * **/
 const update = async (id, data) => {
   const cliente = {
     $set: jsonData(data),
@@ -37,10 +44,20 @@ const update = async (id, data) => {
   return await Crud.saveU(TABLE, id, cliente);
 };
 
+/**
+ * Metodo o funcion que elimina un objeto del documento.
+ * @param id identificador de la collection.
+ * @return un valor 1 si ha sido eliminado.
+ * **/
 const deleteId = async (id) => {
   return await Crud.deleteId(TABLE, id);
 };
 
+/**
+ * Metodo o funcion que crear el modelo de datos para ser registrado o actualizados.
+ * @prarm data datos que de debe ingresar dentro del metodo save y update.
+ * @return estructura del modelo.
+ * **/
 const jsonData = (data) => {
   return {
     nombre: data.nombre,

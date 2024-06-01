@@ -16,6 +16,6 @@ module.exports.UsuarioAPI = (app) => {
     .get('/:id', verifyJWT.verifyToken, UsuarioController.usuario)
     .post('/', verifyJWT.verifyToken, UsuarioController.usuarioC);
 
-    app.use(Config.api+'usuario', router);
+    app.use(`${Config.api}usuario`, router);
 }
 

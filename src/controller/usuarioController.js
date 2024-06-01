@@ -4,7 +4,7 @@ const createError = require("http-errors");
 const { Response } = require("../utils/Response");
 const { Utils } = require("../utils/utils");
 
-// Controlador que dara la funcionalidad de crear, editar, actulizar y eliminar datos especificamente 
+// Controlador que dara la funcionalidad de crear, editar, actulizar y eliminar datos especificamente
 // de un catalogo de usuarios.
 
 module.exports.UsuarioController = {
@@ -13,9 +13,9 @@ module.exports.UsuarioController = {
       let usuarios = await UsuarioService.findAll();
       Response.responseGeneral(res, 200, "Lista de usuarios", usuarios);
     } catch (error) {
-      debug(error) ;
+      debug(error);
       Response.responseGeneral(res, ({ statusCode } = error));
-   }
+    }
   },
   usuario: async (req, res) => {
     try {
@@ -28,7 +28,6 @@ module.exports.UsuarioController = {
     } catch (error) {
       debug(error);
       Response.responseGeneral(res, ({ statusCode } = error));
-
     }
   },
   usuarioC: async (req, res) => {
@@ -46,7 +45,6 @@ module.exports.UsuarioController = {
     } catch (error) {
       debug(error);
       Response.responseGeneral(res, ({ statusCode } = error));
-
     }
   },
   usuarioU: async (req, res) => {
@@ -64,7 +62,6 @@ module.exports.UsuarioController = {
     } catch (error) {
       debug(error);
       Response.responseGeneral(res, ({ statusCode } = error));
-
     }
   },
   usuarioD: async (req, res) => {
@@ -74,7 +71,6 @@ module.exports.UsuarioController = {
     } catch (error) {
       debug(error);
       Response.responseGeneral(res, ({ statusCode } = error));
-
     }
   },
 };

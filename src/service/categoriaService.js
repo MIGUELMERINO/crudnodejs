@@ -56,10 +56,10 @@ const deleteId = async (id) => {
 /**
  * Metodo que crear el objeto json que se usa para crear y actualiza un objeto en el documento.
  * @param data datos que se crearan o actualizaran.
- * @return retorna el objeto creada con los atributos del modelo. 
+ * @return retorna el objeto creada con los atributos del modelo.
  * */
 const jsonData = async (data) => {
-  let index = (await Crud.indice(TABLE));
+  let index = await Crud.indice(TABLE);
   return {
     id: data.id != null ? data.id : index + 1,
     nombre: data.nombre,

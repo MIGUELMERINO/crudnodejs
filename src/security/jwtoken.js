@@ -28,7 +28,9 @@ module.exports.AuthController = {
           const token = jwt.sign({ userId: userAuth._id }, Config.secret, {
             expiresIn: "1h",
           });
-          Response.responseGeneral(res, 200, "sucess", { token: `Bearer ${token}` } );
+          Response.responseGeneral(res, 200, "sucess", {
+            token: `Bearer ${token}`,
+          });
         }
       }
     } catch (error) {

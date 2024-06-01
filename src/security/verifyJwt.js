@@ -16,7 +16,7 @@ module.exports.verifyJWT = {
       if (!token) {
         Response.responseGeneral(res, 401, createError.Unauthorized());
       } else {
-        const jwToken = token.split(' ')[1];
+        const jwToken = token.split(" ")[1];
         const decode = jwt.verify(jwToken, Config.secret);
         req.userId = decode.userId;
         next();

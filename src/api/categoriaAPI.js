@@ -12,7 +12,7 @@ module.exports.CategoriaAPI = (app) => {
     .get('/:id', verifyJWT.verifyToken, CategoriaController.categoria)
     .post('/', verifyJWT.verifyToken, CategoriaController.categoriaC);
 
-    app.use(Config.api + 'categoria', router);
+    app.use(`${Config.api}categoria`, router);
 }
 
 

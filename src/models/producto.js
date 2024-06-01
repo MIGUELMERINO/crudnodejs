@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 /**
- * Estructura o esquema de datos que se van a crear en 
- * la base de datos NOSQL mongodb, asi validando cada uno 
+ * Estructura o esquema de datos que se van a crear en
+ * la base de datos NOSQL mongodb, asi validando cada uno
  * de los atributos.
  * */
 

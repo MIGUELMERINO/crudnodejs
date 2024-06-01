@@ -12,7 +12,7 @@ module.exports.ClienteAPI = (app) => {
     .get('/:id', verifyJWT.verifyToken, ClienteController.cliente)
     .post('/', verifyJWT.verifyToken, ClienteController.clienteC);
 
-    app.use(Config.api + 'cliente', router);
+    app.use(`${Config.api}cliente`, router);
 }
 
 

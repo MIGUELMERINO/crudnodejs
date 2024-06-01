@@ -144,7 +144,7 @@ const indice = async (collections) => {
  * Metodo para crear la authentication de un usuario dentro de la coleccion.
  * @param collections tabla o documento donde se encuentra.
  * @param email correo electronico como parametro de busqueda.
- * @return usuario registrado o null o undefined. 
+ * @return usuario registrado o null o undefined.
  * */
 const authentication = async (collections, email) => {
   let connect = await ConnectionDB(collections);

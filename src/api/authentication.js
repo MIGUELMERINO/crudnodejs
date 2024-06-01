@@ -5,7 +5,7 @@ const { AuthController } = require('../security/jwtoken');
 
 module.exports.LoginAPI = (app) => {
     router.post('/', AuthController.auth)
-    app.use(Config.api + 'authentication', router);
+    app.use(`${Config.api}authentication`, router);
 } 
 
 

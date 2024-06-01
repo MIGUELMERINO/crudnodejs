@@ -12,5 +12,5 @@ module.exports.ProductoAPI = (app) => {
     .get("/:id", verifyJWT.verifyToken, ProductoController.producto)
     .post("/", verifyJWT.verifyToken, ProductoController.productoC);
 
-  app.use(Config.api + "producto", router);
+  app.use(`${Config.api}producto`, router);
 };
