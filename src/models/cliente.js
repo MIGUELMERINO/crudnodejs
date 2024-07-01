@@ -9,6 +9,7 @@ const { Schema, model } = mongoose;
 
 const clienteSchema = new mongoose.Schema(
   {
+    id: { type: Numbre, uniqued: true },
     nombre: { type: String, required: true },
     apaterno: { type: String, required: true },
     amaterno: { type: String, required: false },

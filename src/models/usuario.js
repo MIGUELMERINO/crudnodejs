@@ -9,6 +9,7 @@ const { Schema, model } = mongoose;
 
 const usuarioSchema = new mongoose.Schema(
   {
+    id: { type: Number, uniqued: true },
     email: { type: String, required: true, uniqued: true },
     password: { type: String, required: true },
     nombre: { type: String, required: true },

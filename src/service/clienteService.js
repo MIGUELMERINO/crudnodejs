@@ -27,7 +27,7 @@ const findById = async (id) => {
  * @return retorna una collection registrada.
  * **/
 const save = async (data) => {
-  let cliente = new Cliente(jsonData(data));
+  let cliente = new Cliente(await jsonData(data));
   return await Crud.save(TABLE, cliente);
 };
 
@@ -39,7 +39,7 @@ const save = async (data) => {
  * **/
 const update = async (id, data) => {
   const cliente = {
-    $set: jsonData(data),
+    $set: await jsonData(data),
   };
   return await Crud.saveU(TABLE, id, cliente);
 };
@@ -58,8 +58,10 @@ const deleteId = async (id) => {
  * @prarm data datos que de debe ingresar dentro del metodo save y update.
  * @return estructura del modelo.
  * **/
-const jsonData = (data) => {
+const jsonData = async (data) => {
+  let index = await Crud.indice(TABLE);
   return {
+    id: data.id != null ? data.id : index + 1,
     nombre: data.nombre,
     apaterno: data.apaterno,
     amaterno: data.amaterno,

@@ -70,9 +70,13 @@ const auth = async (email) => {
 /**
  * Creamos una funcion que llena los valores de nuestra aplicacion.
  * asi como los actualiza.
+ * @param data datos que envian del servicio para ser creados como modelo de datos.
+ * @return returna los datos en el formado del modelo de datos para mongodb.
  * */
 const jsonData = async (data) => {
+  let index = await Crud.indice(TABLE);
   return {
+    id: data.id != null ? data.id : index + 1,
     email: data.email,
     password: await Utils.encodePassword(data.password),
     nombre: data.nombre,
